@@ -1,0 +1,16 @@
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.ico
+*.webp
+*.svg
+*.eps
+*.pdf
+*.html
+*.css
+*.js
+
+__pycache__/
