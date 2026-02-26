@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>出力結果</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", "Meiryo", sans-serif;
+      margin: 20px;
+      background: #f0f2f5;
+      color: #1a1a1a;
+    }
+    .report {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+      border: 1px solid #dde1e6;
+    }
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    .report-table tr { border-bottom: 1px solid #e5e8ec; }
+    .report-table tr:last-child { border-bottom: none; }
+    .report-table th {
+      width: 140px;
+      padding: 12px 16px;
+      font-size: 0.9em;
+      font-weight: 600;
+      color: #374151;
+      background: linear-gradient(180deg, #f8f9fb 0%, #eef1f5 100%);
+      border-right: 1px solid #e5e8ec;
+      vertical-align: top;
+    }
+    .report-table td {
+      padding: 12px 16px;
+      vertical-align: top;
+      background: #fff;
+    }
+    .report-table .row-title th,
+    .report-table .row-title td {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      color: #fff;
+      font-size: 1.1em;
+      padding: 14px 16px;
+      border: none;
+    }
+    .report-table .row-title th { border-right: 1px solid rgba(255,255,255,0.2); }
+    .report-table img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #e5e8ec;
+      border-radius: 4px;
+    }
+    .report-table .error-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+    .report-table .error-table th,
+    .report-table .error-table td {
+      border: 1px solid #dde1e6;
+      padding: 10px;
+      background: #fff;
+    }
+    .report-table .error-table th {
+      background: linear-gradient(180deg, #f8f9fb 0%, #eef1f5 100%);
+      font-size: 0.85em;
+    }
+    .report-table .error-table img {
+      max-width: 280px;
+      max-height: 200px;
+      object-fit: contain;
+    }
+    .result-images-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .result-images-row .img-cell {
+      flex: 1;
+      min-width: 0;
+    }
+    .result-images-row .img-cell img {
+      width: 100%;
+    }
+    #evaluation, #message {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    @media print {
+      body { background: #fff; margin: 0; }
+      .report {
+        max-width: none;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+      }
+      .report-table th {
+        background: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .report-table .row-title th,
+      .report-table .row-title td {
+        background: #333 !important;
+        color: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .report-table img { max-height: none; }
+      .report-table .error-table img { max-width: 240px; max-height: 180px; }
+      .result-images-row { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="report">
+    <table class="report-table">
+      <tr class="row-title">
+        <th>項目</th>
+        <td>出力結果</td>
+      </tr>
+      <tr>
+        <th>結果画像・結果グラフ</th>
+        <td>
+          <div class="result-images-row">
+            <div class="img-cell"><img src="C:/Users/Daiki/Desktop/ResultGUI/image/result_1.png" alt="結果画像0"></div>
+            <div class="img-cell"><img src="C:/Users/Daiki/Desktop/ResultGUI/result_images/result_2.png" alt="結果グラフ"></div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>評価値</th>
+        <td id="evaluation">0.75</td>
+      </tr>
+      <tr>
+        <th>メッセージ</th>
+        <td id="message">エラー画像が5ファイル検出されました</td>
+      </tr>
+      <tr>
+        <th>エラー一覧</th>
+        <td>
+          <table class="error-table">
+            <thead>
+              <tr>
+                <th>Error_Origin（処理前）</th>
+                <th>Error_Result（処理後）</th>
+              </tr>
+            </thead>
+            <tbody>
+        <tr>
+          <td><img src="C:/Users/Daiki/Desktop/ResultGUI/result_images/error_origin_0.png" alt="Error_Origin_0"></td>
+          <td><img src="C:/Users/Daiki/Desktop/ResultGUI/result_images/error_result_0.png" alt="Error_Result_0"></td>
+        </tr>
+        <tr>
+          <td><img src="C:/Users/Daiki/Desktop/ResultGUI/result_images/error_origin_1.png" alt="Error_Origin_1"></td>
+          <td><img src="C:/Users/Daiki/Desktop/ResultGUI/result_images/error_result_1.png" alt="Error_Result_1"></td>
+        </tr>
+        <tr>
+          <td><img src="C:/Users/Daiki/Desktop/ResultGUI/result_images/error_origin_2.png" alt="Error_Origin_2"></td>
+          <td><img src="C:/Users/Daiki/Desktop/ResultGUI/result_images/error_result_2.png" alt="Error_Result_2"></td>
+        </tr>
+        <tr>
+          <td><img src="C:/Users/Daiki/Desktop/ResultGUI/result_images/error_origin_3.png" alt="Error_Origin_3"></td>
+          <td><img src="C:/Users/Daiki/Desktop/ResultGUI/result_images/error_result_3.png" alt="Error_Result_3"></td>
+        </tr>
+        <tr>
+          <td><img src="C:/Users/Daiki/Desktop/ResultGUI/result_images/error_origin_4.png" alt="Error_Origin_4"></td>
+          <td><img src="C:/Users/Daiki/Desktop/ResultGUI/result_images/error_result_4.png" alt="Error_Result_4"></td>
+        </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

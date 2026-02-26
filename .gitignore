@@ -9,8 +9,5 @@
 *.svg
 *.eps
 *.pdf
-*.html
-*.css
-*.js
 
 __pycache__/
